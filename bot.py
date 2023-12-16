@@ -12,7 +12,7 @@ def filter_password_2(message):
     password = "пока"
     return password in message.text.lower()
 
-#тут я использовал рандом для выбора привета и пока, чтобы было удобнее в info лежит вся текстовая информация а тут она удобно выполняется
+#тут я использовал рандом для выбора привета и пока, чтобы было удобнее в info лежит вся текстовая информация а тут она удобно  выполняется
 @bot.message_handler(content_types=['text'], func=filter_password_1)
 def say_hello(message):
     bot.send_message(message.chat.id, f"{random.choice(info.hello_list)}, {message.from_user.username}!")

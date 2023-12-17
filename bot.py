@@ -50,4 +50,8 @@ def photo_command(message):
     bot.send_message(message.chat.id, 'Я выгляжу так:')
     bot.send_photo(message.chat.id, open('itadori.jpg', 'rb'))
 
+@bot.message_handler(content_types=['text'])
+def all_message(message):
+    bot.send_message(message.chat.id, message.text)
+
 bot.polling()
